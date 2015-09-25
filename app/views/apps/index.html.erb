@@ -1,0 +1,9 @@
+<h3>Welcome!</h3>
+
+<p>This is the Postit template. You've access the PostsController, index action. This is the index template. Find me under app/views/posts folder.</p>
+
+<% @apps.each do |app| %>  <!--@apps = class variable (not local block) Why can it be plural? Why is it not Apps? -->
+  <%= render 'app', app: app %> <!-- Render 'app' file in the same folder as current file. Pass in the variable 'app' provided by @apps.each.do as a paremeter to 'app' required by the 'app' file -->
+<% end %>
+
+

@@ -1,0 +1,22 @@
+<%= render 'shared/errors', obj: @app %> <!-- pass in an object to errors. Errors will query object to see if there are any errors attached to it -->
+
+<div class='well'>
+  <%= form_for @app do |f| %>
+  <div class='control-group'>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class='control-group'%>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+  <div class='control-group'%>
+    <%= f.label :functions %>
+    <%= f.text_area :functions %>
+  </div>
+  <div class='control-group'>
+    <%= f.collection_check_boxes :category_ids, Category.all, :id, :name %>
+  </div>
+  <%= f.submit(@app.new_record? ? 'Create App' : 'Update App', class: 'btn btn-primary') %>
+    <% end %>
+  </div>

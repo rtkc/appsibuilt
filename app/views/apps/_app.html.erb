@@ -1,0 +1,7 @@
+<div class='row'>
+  <h4><%= link_to(app.title, app_path(app))%></h4> <!--don't use a space between link_to and () -->
+  <p><%= app.description %></p>
+  <p>
+    <span class='quiet'>posted by <%= app.creator.username %> on <%= display_datetime(app.created_at) %> </span>
+  </p>
+</div>

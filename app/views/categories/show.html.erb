@@ -1,0 +1,7 @@
+<% header = link_to('All apps ', apps_path) + "&raquo; Category: #{@category.name}".html_safe %>
+
+<%= render 'shared/content_title', title: header %>
+
+<% @category.apps.each do |app| %>
+  <%= render 'apps/app', app: app %>
+<% end %>

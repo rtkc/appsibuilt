@@ -1,0 +1,12 @@
+<div class='row'>
+  <div class='span8 well'>
+    <em>"<%= comment.body %>"</em>
+    <% if show_app_title ||= false %>
+    <%= link_to comment.app.title, fix_url(comment.app.url) %>
+    <% end %> 
+     <p>
+      <span class='quiet'>by</span> <%= link_to comment.creator.username, user_path(comment.creator)%>
+      <small>at <%= display_datetime(comment.created_at)%></small>
+    </p>
+  </div>
+</div>
